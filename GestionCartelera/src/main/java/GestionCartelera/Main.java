@@ -11,6 +11,7 @@ public class Main {
 		Princicpal.setVisible(true);
         Princicpal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Princicpal.setResizable(false);
+        Princicpal.PushVentana(new Bienvenida(Princicpal));
 	}
 
 }
