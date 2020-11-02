@@ -12,6 +12,7 @@ public class ControladorVentana extends JFrame {
 	
 	ControladorVentana()
 	{	
+		setLayout(null);
 		//Creamos el array dinamico
 		ListaVentanas = new ArrayList<JPanel>();
 		//Por defecto empieza en la ventana cero
@@ -25,12 +26,14 @@ public class ControladorVentana extends JFrame {
 		//Añadimos la ventana al array de ventanas
 		ListaVentanas.add(in);
 		//Añadimos la ventana al JFrame
-		this.add(ListaVentanas.get(ListaVentanas.size()-1));
+		add(ListaVentanas.get(ListaVentanas.size()-1));
 		//Si es la primera que añadimos la hacemos visble, el resto por defecto seran invisibles
 		if(ListaVentanas.size()==1)
 			ListaVentanas.get(ListaVentanas.size()-1).setVisible(true);
 		else
 			ListaVentanas.get(ListaVentanas.size()-1).setVisible(false);
+		
+		this.update(getGraphics());
 	}
 	
 	public int GetVentanaActual()
