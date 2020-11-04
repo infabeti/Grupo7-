@@ -14,47 +14,49 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class VentanaLogin extends JPanel implements ActionListener {
 	JLabel imgfondo;
-    JLabel textDNI,textPSWD;
-    JTextField inDNI;
+    JLabel textUser,textPSWD;
+    JTextField inUser;
     JPasswordField inPSWD;
     JButton Login;
     ControladorVentana Padre;
     JLabel Error;
+    LoginControler LoginC;
     
     VentanaLogin(ControladorVentana inPadre)
     {
+    	LoginC = new LoginControler("admin", ("nimda").toCharArray());
     	Padre = inPadre;
     	this.setLayout(null);
     	this.setSize(800, 600);
     	this.setBackground(Color.WHITE);
 
-        textDNI = new JLabel("DNI:");
-        textDNI.setFont(new Font(textDNI.getFont().getName(), Font.PLAIN, 30));
-        textDNI.setBounds(260, 120, 100, 50);
-        add(textDNI);
+        textUser = new JLabel("DNI:");
+        textUser.setFont(new Font(textUser.getFont().getName(), Font.PLAIN, 30));
+        textUser.setBounds(260, 120, 100, 50);
+        add(textUser);
 
-        inDNI =  new JTextField();
-        inDNI.setBounds(300,170,200,50);
-        inDNI.setFont(new Font(inDNI.getFont().getName(), Font.PLAIN, 20));
-        add(inDNI);
+        inUser =  new JTextField();
+        inUser.setBounds(300,170,200,50);
+        inUser.setFont(new Font(inUser.getFont().getName(), Font.PLAIN, 20));
+        add(inUser);
 
         textPSWD = new JLabel("Contraseña:");
-        textPSWD.setFont(textDNI.getFont());
+        textPSWD.setFont(textUser.getFont());
         textPSWD.setBounds(260, 220, 300, 50);
         add(textPSWD);
 
         inPSWD =  new JPasswordField();
         inPSWD.setBounds(300,270,200,50);
-        inPSWD.setFont(inDNI.getFont());
+        inPSWD.setFont(inUser.getFont());
         add(inPSWD);
 
         Login= new JButton("Login");
         Login.setBounds(248, 350, 300, 40);
-        Login.setFont(inDNI.getFont());
+        Login.setFont(inUser.getFont());
         Login.addActionListener(this);
         add(Login);
 
-        Error=new JLabel("Error");
+        Error=new JLabel("");
         Error.setForeground(Color.RED);
         Error.setBounds(228, 520, 300, 20);
         add(Error);
@@ -62,7 +64,17 @@ public class VentanaLogin extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getSource()==Login)
+		{
+			String Usuario = inUser.getText();
+			char[] Contrasena = (inPSWD.getPassword());
+			if(LoginC.compararContrasenas(Usuario, Contrasena))
+			{
+				Error.setText("Login bien");
+			}
+			else
+				Error.setText("Login fallido");
+		}
 		
 	}
 }
