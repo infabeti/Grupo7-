@@ -3,7 +3,8 @@ package GestionCartelera;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.Collection; 
 
 @SuppressWarnings("serial")
 public class ControladorVentana extends JFrame {
@@ -21,10 +22,10 @@ public class ControladorVentana extends JFrame {
 	
 	
 	
-	public void PushVentana(JPanel in)
+	public void PushVentana(Bienvenida Bienvenida)
 	{
 		//Añadimos la ventana al array de ventanas
-		ListaVentanas.add(in);
+		ListaVentanas.addAll((Collection<? extends JPanel>) Bienvenida);
 		//Añadimos la ventana al JFrame
 		add(ListaVentanas.get(ListaVentanas.size()-1));
 		//Si es la primera que añadimos la hacemos visble, el resto por defecto seran invisibles
