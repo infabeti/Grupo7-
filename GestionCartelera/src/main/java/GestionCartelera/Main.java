@@ -12,7 +12,7 @@ public class Main {
         Princicpal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Princicpal.setResizable(false);
         
-        Princicpal.PushVentana(new VentanaLogin(Princicpal));
+        Princicpal.PushVentana(new Bienvenida(Princicpal));
 	}
 
 }

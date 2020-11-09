@@ -22,10 +22,10 @@ public class ControladorVentana extends JFrame {
 	
 	
 	
-	public void PushVentana(Bienvenida Bienvenida)
+	public void PushVentana(JPanel inPanel)
 	{
 		//Añadimos la ventana al array de ventanas
-		ListaVentanas.addAll((Collection<? extends JPanel>) Bienvenida);
+		ListaVentanas.add(inPanel);
 		//Añadimos la ventana al JFrame
 		add(ListaVentanas.get(ListaVentanas.size()-1));
 		//Si es la primera que añadimos la hacemos visble, el resto por defecto seran invisibles
