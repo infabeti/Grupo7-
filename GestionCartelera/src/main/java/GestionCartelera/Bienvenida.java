@@ -32,6 +32,10 @@ public class Bienvenida extends JPanel{
 		cineLabel.setForeground(Color.lightGray);
 		cineLabel.setBounds(190, 80, 430, 490);
 		this.add(cineLabel);
+		
+		
 	   }
+	
+	
 
 	}
