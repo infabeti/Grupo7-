@@ -28,35 +28,35 @@ public class SeleccionGenero {
 
 		panel.setLayout(null);
 
-		JLabel userLabel = new JLabel("Seleccion De Genero");
-		userLabel.setBounds(40, 10, 300, 25);
-		userLabel.setFont(new Font("Serif", Font.BOLD, 30));
-		userLabel.setForeground(Color.lightGray);
-		panel.add(userLabel);;
+		JLabel seleccionLabel = new JLabel("Seleccion De Genero");
+		seleccionLabel.setBounds(40, 10, 300, 25);
+		seleccionLabel.setFont(new Font("Serif", Font.BOLD, 30));
+		seleccionLabel.setForeground(Color.lightGray);
+		panel.add(seleccionLabel);;
 
-		JButton loginButton = new JButton("DRAMA");
-		loginButton.setBounds(40, 80, 140, 25);
-		panel.add(loginButton);
+		JButton dramaButton = new JButton("DRAMA");
+		dramaButton.setBounds(40, 80, 140, 25);
+		panel.add(dramaButton);
 		
-		JButton registerButton = new JButton("COMEDIO");
-		registerButton.setBounds(40, 160, 140, 25);
-		panel.add(registerButton);
+		JButton comediaButton = new JButton("COMEDIA");
+		comediaButton.setBounds(40, 160, 140, 25);
+		panel.add(comediaButton);
 		
-		JButton loginButton1 = new JButton("TERROR");
-		loginButton1.setBounds(40, 240, 140, 25);
-		panel.add(loginButton1);
+		JButton terrorButton = new JButton("TERROR");
+		terrorButton.setBounds(40, 240, 140, 25);
+		panel.add(terrorButton);
 		
-		JButton registerButton1 = new JButton("CIENCIA FICCION");
-		registerButton1.setBounds(40, 320, 140, 25);
-		panel.add(registerButton1);
+		JButton cienciaButton = new JButton("CIENCIA FICCION");
+		cienciaButton.setBounds(40, 320, 140, 25);
+		panel.add(cienciaButton);
 		
-		JButton loginButton11 = new JButton("SABADO");
-		loginButton11.setBounds(400, 20, 140, 25);
-		panel.add(loginButton11);
+		JButton sabadoButton = new JButton("SABADO");
+		sabadoButton.setBounds(400, 20, 140, 25);
+		panel.add(sabadoButton);
 		
-		JButton registerButton11 = new JButton("DOMINGO");
-		registerButton11.setBounds(550, 20, 140, 25);
-		panel.add(registerButton11);
+		JButton domingoButton = new JButton("DOMINGO");
+		domingoButton.setBounds(550, 20, 140, 25);
+		panel.add(domingoButton);
 	}
 
 }

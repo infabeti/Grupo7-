@@ -2,6 +2,8 @@ package GestionCartelera;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,6 +11,7 @@ import javax.swing.JPanel;
 
 public class Bienvenida extends JPanel{
 
+	protected static final String VLogin = null;
 	ControladorVentana Padre;
 
 	Bienvenida(ControladorVentana inPadre) {
@@ -17,18 +20,18 @@ public class Bienvenida extends JPanel{
 		this.setLayout(null);
     	this.setSize(800, 600);
 
-		JLabel userLabel = new JLabel("BIENVENIDA");
-		userLabel.setFont(new Font("Serif", Font.BOLD, 40));
-		userLabel.setForeground(Color.lightGray);
-		userLabel.setBounds(270, 50, 300, 300);
-		this.add(userLabel);
+		JLabel bienvenidaLabel = new JLabel("BIENVENIDA");
+		bienvenidaLabel.setFont(new Font("Serif", Font.BOLD, 40));
+		bienvenidaLabel.setForeground(Color.lightGray);
+		bienvenidaLabel.setBounds(270, 50, 300, 300);
+		this.add(bienvenidaLabel);
 				
 
-		JLabel passwordLabel = new JLabel("AL CINE ELORRIETA");
-		passwordLabel.setFont(new Font("Serif", Font.BOLD, 40));
-		passwordLabel.setForeground(Color.lightGray);
-		passwordLabel.setBounds(190, 80, 430, 490);
-		this.add(passwordLabel);
+		JLabel cineLabel = new JLabel("AL CINE ELORRIETA");
+		cineLabel.setFont(new Font("Serif", Font.BOLD, 40));
+		cineLabel.setForeground(Color.lightGray);
+		cineLabel.setBounds(190, 80, 430, 490);
+		this.add(cineLabel);
+	   }
 
 	}
-}

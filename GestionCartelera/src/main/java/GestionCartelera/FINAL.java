@@ -29,18 +29,18 @@ public class FINAL {
 
 		panel.setLayout(null);
 
-		JLabel userLabel = new JLabel("DISFRUTA");
-		userLabel.setFont(new Font("Serif", Font.BOLD, 40));
-		userLabel.setForeground(Color.lightGray);
-		userLabel.setBounds(270, 50, 300, 300);
-		panel.add(userLabel);
+		JLabel disfrutaLabel = new JLabel("DISFRUTA");
+		disfrutaLabel.setFont(new Font("Serif", Font.BOLD, 40));
+		disfrutaLabel.setForeground(Color.lightGray);
+		disfrutaLabel.setBounds(270, 50, 300, 300);
+		panel.add(disfrutaLabel);
 				
 
-		JLabel passwordLabel = new JLabel("DE LA SESION!!");
-		passwordLabel.setFont(new Font("Serif", Font.BOLD, 40));
-		passwordLabel.setForeground(Color.lightGray);
-		passwordLabel.setBounds(220, 80, 400, 450);
-		panel.add(passwordLabel);
+		JLabel sesionLabel = new JLabel("DE LA SESION!!");
+		sesionLabel.setFont(new Font("Serif", Font.BOLD, 40));
+		sesionLabel.setForeground(Color.lightGray);
+		sesionLabel.setBounds(220, 80, 400, 450);
+		panel.add(sesionLabel);
 
 }
 }
