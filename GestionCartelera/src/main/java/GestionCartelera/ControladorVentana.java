@@ -9,17 +9,18 @@ import java.util.ArrayList;
 public class ControladorVentana extends JFrame {
 	ArrayList<JPanel> ListaVentanas;
 	private int VentanaActual;
+	private ControladorPelicula PeliControler;
 	
-	ControladorVentana()
+	ControladorVentana(ControladorPelicula iPeliControler)
 	{	
 		setLayout(null);
 		//Creamos el array dinamico
 		ListaVentanas = new ArrayList<JPanel>();
+		//creamos el controlador de peliculas
+		PeliControler = iPeliControler;
 		//Por defecto empieza en la ventana cero
 		VentanaActual = 0;
 	}
-	
-	
 	
 	public void PushVentana(JPanel inPanel)
 	{
