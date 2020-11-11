@@ -5,24 +5,44 @@ import java.awt.Font;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Bienvenida extends JPanel{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-	public Timer tiempo;
+	class TimerEx {
+	    public void main(String arglist[]) {
+	    Timer timer;
+	    timer = new Timer();
+
+	    TimerTask task = new TimerTask() {
+	        public void run()
+	        {
+	            // Aqui Añadimos la accion a realizar
+	        	
+	        	
+	        }
+	        };
+	        // Empezamos dentro de 10ms y luego lanzamos la tarea cada 3000ms
+	    timer.schedule(task, 0, 3000);
+	    }
+	}
+
 	
 	void initialize(){
 	}
 	//metodo que indica la accion al acabar el Timer "tiempo", cambiar system.exit(0) por la ventana de login
 	protected void metodoTimer() {
 	System.exit(0);
-
-
 	}
 	
 	
+
 	protected static final String VLogin = null;
 	ControladorVentana Padre;
 

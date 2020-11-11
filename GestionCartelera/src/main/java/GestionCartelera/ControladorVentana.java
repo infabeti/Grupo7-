@@ -3,8 +3,7 @@ package GestionCartelera;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import java.util.ArrayList;
-import java.util.Collection; 
+import java.util.ArrayList; 
 
 @SuppressWarnings("serial")
 public class ControladorVentana extends JFrame {
