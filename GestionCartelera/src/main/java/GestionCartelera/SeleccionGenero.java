@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SeleccionGenero {
+public class SeleccionGenero{
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Ventana Seleccion de Genero");
@@ -35,7 +35,7 @@ public class SeleccionGenero {
 		JButton dramaButton = new JButton("DRAMA");
 		dramaButton.setBounds(40, 80, 140, 25);
 		panel.add(dramaButton);
-		
+	
 		JButton comediaButton = new JButton("COMEDIA");
 		comediaButton.setBounds(40, 160, 140, 25);
 		panel.add(comediaButton);
@@ -55,6 +55,7 @@ public class SeleccionGenero {
 		JButton domingoButton = new JButton("DOMINGO");
 		domingoButton.setBounds(550, 20, 140, 25);
 		panel.add(domingoButton);
+		
+	
 	}
-
 }
