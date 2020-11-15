@@ -15,23 +15,7 @@ public class Bienvenida extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	class TimerEx {
-	    public void main(String arglist[]) {
-	    Timer timer;
-	    timer = new Timer();
-
-	    TimerTask task = new TimerTask() {
-	        public void run()
-	        {
-	            // Aqui Añadimos la accion a realizar
-	        	
-	        	
-	        }
-	        };
-	        // Empezamos dentro de 10ms y luego lanzamos la tarea cada 3000ms
-	    timer.schedule(task, 0, 3000);
-	    }
-	}
+	
 
 	
 	void initialize(){
@@ -66,8 +50,13 @@ public class Bienvenida extends JPanel{
 		this.add(cineLabel);
 		
 		
+		Timer cronom=new Timer();
+	    cronom.schedule(new TimerTask(){
+
+	    public void run(){
+	    Padre.
+	      
+	    }},3000);
+	}
 	   }
 	
-	
-
-	}
