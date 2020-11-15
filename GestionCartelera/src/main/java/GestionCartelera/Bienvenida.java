@@ -54,7 +54,7 @@ public class Bienvenida extends JPanel{
 	    cronom.schedule(new TimerTask(){
 
 	    public void run(){
-	    Padre.
+	  
 	      
 	    }},3000);
 	}
