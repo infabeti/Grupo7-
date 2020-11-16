@@ -33,6 +33,7 @@ public class Main {
         Princicpal.setResizable(false);
         
         Princicpal.PushVentana(new Bienvenida(Princicpal));
+        Princicpal.PushVentana(new VentanaLogin(Princicpal));
 	}
 
 }
