@@ -11,6 +11,10 @@ import javax.swing.JLabel;
 
 public class SeleccionPeli extends JFrame implements ActionListener{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Dia Hoy;
 	SeleccionGenero Padre;
 	JLabel SelecPeli;
