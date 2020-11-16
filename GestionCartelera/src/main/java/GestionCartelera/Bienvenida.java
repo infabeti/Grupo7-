@@ -10,22 +10,10 @@ import javax.swing.JPanel;
 
 public class Bienvenida extends JPanel{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	
-
-	
 	void initialize(){
 	}
-	//metodo que indica la accion al acabar el Timer "tiempo", cambiar system.exit(0) por la ventana de login
-	protected void metodoTimer() {
-	System.exit(0);
-	}
-	
-	
 
 	protected static final String VLogin = null;
 	ControladorVentana Padre;

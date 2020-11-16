@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class VentanaLogin extends JPanel implements ActionListener {
+	
+	static VentanaLogin tempologin;
+	
 	JLabel imgfondo;
     JLabel textUser,textPSWD;
     JTextField inUser;
@@ -75,6 +78,11 @@ public class VentanaLogin extends JPanel implements ActionListener {
 			else
 				Error.setText("Login fallido");
 		}
+		
+	}
+
+	public void setDefaultCloseOperation(int exitOnClose) {
+		// TODO Auto-generated method stub
 		
 	}
 }
