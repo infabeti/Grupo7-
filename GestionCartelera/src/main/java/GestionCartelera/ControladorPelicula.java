@@ -2,8 +2,6 @@ package GestionCartelera;
 
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
-
 public class ControladorPelicula {
 	ArrayList<Pelicula> ListaPelis;
 	
