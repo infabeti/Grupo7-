@@ -33,7 +33,7 @@ public class VentanaLogin extends JPanel implements ActionListener {
     	this.setSize(800, 600);
     	this.setBackground(Color.WHITE);
 
-        textUser = new JLabel("DNI:");
+        textUser = new JLabel("Usuario:");
         textUser.setFont(new Font(textUser.getFont().getName(), Font.PLAIN, 30));
         textUser.setBounds(260, 120, 100, 50);
         add(textUser);
@@ -73,7 +73,7 @@ public class VentanaLogin extends JPanel implements ActionListener {
 			char[] Contrasena = (inPSWD.getPassword());
 			if(LoginC.compararContrasenas(Usuario, Contrasena))
 			{
-				Error.setText("Login bien");
+				Padre.SetVentanaActual(2);
 			}
 			else
 				Error.setText("Login fallido");

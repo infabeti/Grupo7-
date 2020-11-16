@@ -34,6 +34,7 @@ public class Main {
         
         Princicpal.PushVentana(new Bienvenida(Princicpal));
         Princicpal.PushVentana(new VentanaLogin(Princicpal));
+        Princicpal.PushVentana(new SeleccionGenero(Princicpal));
 	}
 
 }
