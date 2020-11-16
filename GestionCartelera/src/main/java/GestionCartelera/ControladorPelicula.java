@@ -28,7 +28,7 @@ public class ControladorPelicula {
 		return null;
 	}
 	
-	public Pelicula[] GetPelisPorGenero(int igenero)
+	public ArrayList<Pelicula> GetPelisPorGenero(int igenero)
 	{
 		ArrayList<Pelicula> PelisGenero = new ArrayList<Pelicula>();
 		for(int i=0;i<ListaPelis.size();i++)
@@ -36,7 +36,7 @@ public class ControladorPelicula {
 			if(ListaPelis.get(i).getGenero()==igenero)
 				PelisGenero.add(ListaPelis.get(i));
 		}
-		return (Pelicula[]) PelisGenero.toArray();
+		return PelisGenero;
 	}
 	
 	

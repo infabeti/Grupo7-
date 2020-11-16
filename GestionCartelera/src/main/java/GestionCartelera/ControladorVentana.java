@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ControladorVentana extends JFrame {
 	ArrayList<JPanel> ListaVentanas;
 	private int VentanaActual;
-	private ControladorPelicula PeliControler;
+	ControladorPelicula PeliControler;
 	
 	ControladorVentana(ControladorPelicula iPeliControler)
 	{	

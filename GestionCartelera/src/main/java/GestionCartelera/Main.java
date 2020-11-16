@@ -23,7 +23,7 @@ public class Main {
 		CrontPeli.AnadirPeli(new Pelicula(4,13,"Psicosis",109));
 		CrontPeli.AnadirPeli(new Pelicula(4,14,"El resplandor",146));
 		CrontPeli.AnadirPeli(new Pelicula(4,15,"Dracula",155));
-		CrontPeli.AnadirPeli(new Pelicula(4,15,"Cisne negro",110));
+		CrontPeli.AnadirPeli(new Pelicula(4,16,"Cisne negro",110));
 		
 		//Creamos la ventana principal y le damos 
 		ControladorVentana Princicpal = new ControladorVentana(CrontPeli);
