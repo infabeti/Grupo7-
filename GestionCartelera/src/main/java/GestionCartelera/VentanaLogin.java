@@ -35,7 +35,7 @@ public class VentanaLogin extends JPanel implements ActionListener {
 
         textUser = new JLabel("Usuario:");
         textUser.setFont(new Font(textUser.getFont().getName(), Font.PLAIN, 30));
-        textUser.setBounds(260, 120, 100, 50);
+        textUser.setBounds(260, 120, 300, 50);
         add(textUser);
 
         inUser =  new JTextField();
