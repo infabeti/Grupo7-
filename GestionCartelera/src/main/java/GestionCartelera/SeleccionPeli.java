@@ -56,7 +56,8 @@ public class SeleccionPeli extends JFrame implements ActionListener{
 			if(arg0.getSource()==ListaBotones[i])
 			{
 				Hoy.AnadirPelicula(PelisHoy.get(i));
-				this.setVisible(false); //you can't see me!
+				Padre.updateTextAtrea();
+				this.setVisible(false); 
 				this.dispose();
 			}
 		}

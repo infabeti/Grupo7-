@@ -4,17 +4,23 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class SeleccionGenero extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	ControladorVentana Padre;
-	Dia Sabado,Domingo;
+	Dia[] Dias = new Dia[2];
 	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton;
+	int currentDia=0;
+	JTextArea OutPut;
+	JLabel RestMin;
+	TiempoFormater TF;
 	
 	SeleccionGenero(ControladorVentana inPadre) {
 		
@@ -22,8 +28,10 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 		this.setLayout(null);
 		this.setSize(800, 600);
 		
-		Sabado = new Dia(480);
-		Domingo = new Dia(360);
+		Dias[0] = new Dia(480);
+		Dias[1] = new Dia(360);
+		
+		TF = new TiempoFormater();
 
 		JLabel seleccionLabel = new JLabel("Seleccion De Genero");
 		seleccionLabel.setBounds(40, 10, 300, 25);
@@ -58,41 +66,71 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 		
 		domingoButton = new JButton("DOMINGO");
 		domingoButton.setBounds(550, 20, 140, 25);
-		sabadoButton.addActionListener(this);
+		domingoButton.addActionListener(this);
 		this.add(domingoButton);
 		
+		OutPut = new JTextArea();
+		OutPut.setBounds(400, 100, 300, 400);
+		OutPut.setEditable(false);
+		this.add(OutPut);
+		
+		RestMin = new JLabel("8:00 restantes");
+		RestMin.setBounds(400,500,200,50);
+		this.add(RestMin);
+	}
 	
+	public void updateTextAtrea()
+	{
+		ArrayList<Pelicula> PelisHoy = Dias[currentDia].getPelisHoy();
+		String out="";
+		for(Pelicula inPeli: PelisHoy)
+		{
+			out+=inPeli.getNombre()+"\n"+TF.MinutosAString(inPeli.minutosDuracion)+"\n-------------------------------\n";
+		}
+		OutPut.setText(out);
+		RestMin.setText(TF.MinutosAString(Dias[currentDia].MinutosRestantes())+" restantes");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource()==dramaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Sabado, this, 1);
+			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 1);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==comediaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Sabado, this, 3);
+			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 3);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==cienciaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Sabado, this, 2);
+			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 2);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==terrorButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Sabado, this, 4);
+			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 4);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
+		else if(arg0.getSource()==sabadoButton)
+		{
+			currentDia=0;
+			this.updateTextAtrea();
+		}
+		else if(arg0.getSource()==domingoButton)
+		{
+			currentDia=1;
+			this.updateTextAtrea();
+		}
+		
 	}
 }

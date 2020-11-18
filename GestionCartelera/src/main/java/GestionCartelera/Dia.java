@@ -38,12 +38,18 @@ public class Dia {
 	public ArrayList<Integer> GetGenerosHoy()
 	{
 		ArrayList<Integer> ListaGeneros = new ArrayList<Integer>();
+		
 		for(int i=0;i<PelisHoy.size();i++)
 		{
 			ListaGeneros.add(PelisHoy.get(i).getGenero());
 		}
 		
 		return ListaGeneros;
+	}
+	
+	public ArrayList<Pelicula> getPelisHoy()
+	{
+		return PelisHoy;	
 	}
 	
 }
