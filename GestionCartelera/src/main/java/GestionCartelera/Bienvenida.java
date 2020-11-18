@@ -12,9 +12,6 @@ public class Bienvenida extends JPanel{
 	
 	private static final long serialVersionUID = 1L;
 
-	void initialize(){
-	}
-
 	protected static final String VLogin = null;
 	ControladorVentana Padre;
 
@@ -46,5 +43,5 @@ public class Bienvenida extends JPanel{
 	      
 	    }},3000);
 	}
-	   }
+}
 	
