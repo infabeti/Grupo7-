@@ -10,6 +10,7 @@ public class ControladorVentana extends JFrame {
 	ArrayList<JPanel> ListaVentanas;
 	private int VentanaActual;
 	ControladorPelicula PeliControler;
+	Dia[] Dias;
 	
 	ControladorVentana(ControladorPelicula iPeliControler)
 	{	
@@ -46,6 +47,7 @@ public class ControladorVentana extends JFrame {
 	{
 		ListaVentanas.get(this.GetVentanaActual()).setVisible(false);
 		ListaVentanas.get(inVentana).setVisible(true);
+		ListaVentanas.get(inVentana).revalidate();
 		this.VentanaActual = inVentana;
 	}
 }

@@ -15,21 +15,33 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	ControladorVentana Padre;
-	Dia[] Dias = new Dia[2];
-	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton;
+	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton,siguiente;
 	int currentDia=0;
 	JTextArea OutPut;
 	JLabel RestMin;
 	TiempoFormater TF;
+	int hasloaded=0;
+	
+	@Override
+	public void revalidate()
+	{
+		if(hasloaded==1)
+		{
+			Padre.Dias = new Dia[2];
+			Padre.Dias[0] = new Dia(480);
+			Padre.Dias[1] = new Dia(360);
+		}
+	}
 	
 	SeleccionGenero(ControladorVentana inPadre) {
-		
+		hasloaded=1;
 		Padre = inPadre;
 		this.setLayout(null);
 		this.setSize(800, 600);
 		
-		Dias[0] = new Dia(480);
-		Dias[1] = new Dia(360);
+		Padre.Dias = new Dia[2];
+		Padre.Dias[0] = new Dia(480);
+		Padre.Dias[1] = new Dia(360);
 		
 		TF = new TiempoFormater();
 
@@ -69,6 +81,11 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 		domingoButton.addActionListener(this);
 		this.add(domingoButton);
 		
+		siguiente = new JButton("SIGUIENTE");
+		siguiente.setBounds(550, 20, 140, 25);
+		siguiente.addActionListener(this);
+		this.add(siguiente);
+		
 		OutPut = new JTextArea();
 		OutPut.setBounds(400, 100, 300, 400);
 		OutPut.setEditable(false);
@@ -81,42 +98,78 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 	
 	public void updateTextAtrea()
 	{
-		ArrayList<Pelicula> PelisHoy = Dias[currentDia].getPelisHoy();
+		dramaButton.setBackground(Color.WHITE);
+		dramaButton.setEnabled(true);
+		cienciaButton.setBackground(Color.WHITE);
+		cienciaButton.setEnabled(true);
+		comediaButton.setBackground(Color.WHITE);
+		comediaButton.setEnabled(true);
+		terrorButton.setBackground(Color.WHITE);
+		terrorButton.setEnabled(true);
+		
+		ArrayList<Pelicula> PelisHoy = Padre.Dias[currentDia].getPelisHoy();
 		String out="";
 		for(Pelicula inPeli: PelisHoy)
 		{
 			out+=inPeli.getNombre()+"\n"+TF.MinutosAString(inPeli.minutosDuracion)+"\n-------------------------------\n";
 		}
 		OutPut.setText(out);
-		RestMin.setText(TF.MinutosAString(Dias[currentDia].MinutosRestantes())+" restantes");
+		RestMin.setText(TF.MinutosAString(Padre.Dias[currentDia].MinutosRestantes())+" restantes");
+		
+		ArrayList<Integer> Generos = Padre.Dias[currentDia].GetGenerosHoy();
+		for(int genero: Generos)
+		{
+			switch(genero)
+			{
+				case 1:
+					dramaButton.setBackground(Color.RED);
+					dramaButton.setEnabled(false);
+					break;
+				case 2:
+					cienciaButton.setBackground(Color.RED);
+					cienciaButton.setEnabled(false);
+					break;
+				case 3:
+					comediaButton.setBackground(Color.RED);
+					comediaButton.setEnabled(false);
+					break;
+				case 4:
+					terrorButton.setBackground(Color.RED);
+					terrorButton.setEnabled(false);
+					break;
+			}
+		}
 	}
 
+	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource()==dramaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 1);
+			SeleccionPeli SP = new SeleccionPeli(Padre.Dias[currentDia], this, 1);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==comediaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 3);
+			SeleccionPeli SP = new SeleccionPeli(Padre.Dias[currentDia], this, 3);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==cienciaButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 2);
+			SeleccionPeli SP = new SeleccionPeli(Padre.Dias[currentDia], this, 2);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
 		}
 		else if(arg0.getSource()==terrorButton)
 		{
-			SeleccionPeli SP = new SeleccionPeli(Dias[currentDia], this, 4);
+			SeleccionPeli SP = new SeleccionPeli(Padre.Dias[currentDia], this, 4);
 			SP.setVisible(true);
 			SP.setBounds(0,0,400,600);
 			SP.setResizable(false);
