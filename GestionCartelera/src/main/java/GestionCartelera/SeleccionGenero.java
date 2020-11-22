@@ -31,6 +31,7 @@ public class SeleccionGenero extends VentanaMedia implements ActionListener{
 			Padre.Dias[0] = new Dia(480);
 			Padre.Dias[1] = new Dia(360);
 		}
+		this.updateTextAtrea();
 	}
 	
 	SeleccionGenero(ControladorVentana inPadre) {

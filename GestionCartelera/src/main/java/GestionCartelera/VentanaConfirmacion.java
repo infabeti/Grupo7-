@@ -6,21 +6,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class VentanaConfirmacion extends JPanel implements ActionListener{
+public class VentanaConfirmacion extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
-	ControladorVentana Padre;
+	PantallaResumen Padre;
 	Dia Sabado,Domingo;
-	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton;
+	JButton SiButton,NoButton;
 	
-	VentanaConfirmacion(ControladorVentana inPadre) {
+	VentanaConfirmacion(PantallaResumen inPadre) {
 		
 		Padre = inPadre;
 		this.setLayout(null);
-		this.setSize(800, 600);
+		this.setSize(400, 300);
 		
 
 		JLabel confirmacionLabel = new JLabel("Estas Seguro");
@@ -29,21 +31,33 @@ public class VentanaConfirmacion extends JPanel implements ActionListener{
 		confirmacionLabel.setForeground(Color.lightGray);
 		this.add(confirmacionLabel);;
 
-		dramaButton = new JButton("Si");
-		dramaButton.setBounds(40, 80, 140, 25);
-		dramaButton.addActionListener(this);
-		this.add(dramaButton);
+		SiButton = new JButton("Si");
+		SiButton.setBounds(40, 80, 140, 25);
+		SiButton.addActionListener(this);
+		this.add(SiButton);
 	
-		comediaButton = new JButton("No");
-		comediaButton.setBounds(40, 160, 140, 25);
-		comediaButton.addActionListener(this);
-		this.add(comediaButton);
+		NoButton = new JButton("No");
+		NoButton.setBounds(40, 160, 140, 25);
+		NoButton.addActionListener(this);
+		this.add(NoButton);
 		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		if(arg0.getSource()==SiButton)
+		{
+			JOptionPane.showMessageDialog(null, "Se ha guardado la configuracion");
+			this.setVisible(false); 
+			this.dispose();
+			System.exit(NORMAL);
+		}
+		else if(arg0.getSource()==NoButton)
+		{
+			Padre.Padre.SetVentanaActual(0);
+			this.setVisible(false); 
+			this.dispose();
+		}
 		
 	}
 }

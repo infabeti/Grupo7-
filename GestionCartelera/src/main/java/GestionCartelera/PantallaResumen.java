@@ -84,6 +84,13 @@ public class PantallaResumen extends VentanaMedia implements ActionListener {
 		{
 			Padre.SetVentanaActual(0);
 		}
+		else if(arg0.getSource()==Siguiente)
+		{
+			VentanaConfirmacion VC = new VentanaConfirmacion(this);
+			VC.setVisible(true);
+			VC.setBounds(0,0,400,300);
+			VC.setResizable(false);
+		}
 		
 	}
 }
