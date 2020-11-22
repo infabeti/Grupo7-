@@ -11,11 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class SeleccionGenero extends JPanel implements ActionListener{
+public class SeleccionGenero extends VentanaMedia implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	ControladorVentana Padre;
-	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton,siguiente;
+	JButton dramaButton,comediaButton,terrorButton,cienciaButton,sabadoButton,domingoButton,siguiente,cancelar;
 	int currentDia=0;
 	JTextArea OutPut;
 	JLabel RestMin;
@@ -23,7 +23,7 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 	int hasloaded=0;
 	
 	@Override
-	public void revalidate()
+	public void Limpiar()
 	{
 		if(hasloaded==1)
 		{
@@ -82,9 +82,14 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 		this.add(domingoButton);
 		
 		siguiente = new JButton("SIGUIENTE");
-		siguiente.setBounds(550, 20, 140, 25);
+		siguiente.setBounds(500, 500, 150, 50);
 		siguiente.addActionListener(this);
 		this.add(siguiente);
+		
+		cancelar = new JButton("Cancelar");
+		cancelar.setBounds(50, 500, 150, 50);
+		cancelar.addActionListener(this);
+		this.add(cancelar);
 		
 		OutPut = new JTextArea();
 		OutPut.setBounds(400, 100, 300, 400);
@@ -183,6 +188,14 @@ public class SeleccionGenero extends JPanel implements ActionListener{
 		{
 			currentDia=1;
 			this.updateTextAtrea();
+		}
+		else if(arg0.getSource()==siguiente)
+		{
+			Padre.SetVentanaActual(3);
+		}
+		else if(arg0.getSource()==cancelar)
+		{
+			Padre.SetVentanaActual(0);
 		}
 		
 	}

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class ControladorVentana extends JFrame {
-	ArrayList<JPanel> ListaVentanas;
+	ArrayList<VentanaMedia> ListaVentanas;
 	private int VentanaActual;
 	ControladorPelicula PeliControler;
 	Dia[] Dias;
@@ -16,14 +16,14 @@ public class ControladorVentana extends JFrame {
 	{	
 		setLayout(null);
 		//Creamos el array dinamico
-		ListaVentanas = new ArrayList<JPanel>();
+		ListaVentanas = new ArrayList<VentanaMedia>();
 		//creamos el controlador de peliculas
 		PeliControler = iPeliControler;
 		//Por defecto empieza en la ventana cero
 		VentanaActual = 0;
 	}
 	
-	public void PushVentana(JPanel inPanel)
+	public void PushVentana(VentanaMedia inPanel)
 	{
 		//Añadimos la ventana al array de ventanas
 		ListaVentanas.add(inPanel);
@@ -47,7 +47,7 @@ public class ControladorVentana extends JFrame {
 	{
 		ListaVentanas.get(this.GetVentanaActual()).setVisible(false);
 		ListaVentanas.get(inVentana).setVisible(true);
-		ListaVentanas.get(inVentana).revalidate();
+		ListaVentanas.get(inVentana).Limpiar();
 		this.VentanaActual = inVentana;
 	}
 }

@@ -8,7 +8,7 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Bienvenida extends JPanel{
+public class Bienvenida extends VentanaMedia{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -40,6 +40,18 @@ public class Bienvenida extends JPanel{
 
 	    public void run(){
 	    	inPadre.SetVentanaActual(1);
+	      
+	    }},3000);
+	}
+	
+	@Override
+	public void Limpiar()
+	{
+		Timer cronom=new Timer();
+	    cronom.schedule(new TimerTask(){
+
+	    public void run(){
+	    	Padre.SetVentanaActual(1);
 	      
 	    }},3000);
 	}

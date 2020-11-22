@@ -12,7 +12,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
-public class VentanaLogin extends JPanel implements ActionListener {
+public class VentanaLogin extends VentanaMedia implements ActionListener {
 	
 	static VentanaLogin tempologin;
 	
@@ -63,6 +63,13 @@ public class VentanaLogin extends JPanel implements ActionListener {
         Error.setForeground(Color.RED);
         Error.setBounds(228, 520, 300, 20);
         add(Error);
+    }
+    
+    @Override
+    public void Limpiar()
+    {
+    	inUser.setText("");
+    	inPSWD.setText("");
     }
 
 	@Override
